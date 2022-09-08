@@ -1,0 +1,203 @@
+/*清除浏览器默认边框。
+使用边框和内边距的值包含在元素的width和height内*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body {
+    background: #000;
+    overflow: hidden;
+    --secondary: #4db5ff;
+    --primary: #0dffb7;
+    --bright: #fff;
+    --decoration: rgba(255, 255, 255, 10%);
+    --decorationBorder: rgba(255, 255, 255, 50%);
+    --textOpacity: rgba(255, 255, 255, 30%);
+    --textBlack: #000;
+    font-size: 12px;
+    font-family: tahoma, arial, sans-serif, 'Microsoft Yahei';
+    position: relative;
+    cursor: url(./arr48\ copy.png),auto;
+}
+/* 垂直水平居中 */
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to bottom,#f1f4f9,#dff1ff);
+}
+/* 背景颜色 */
+section .color {
+    position: absolute;
+    filter: blur(200px);
+}
+section .color:nth-child(1) {
+    top:-350px;
+    width: 600px;
+    height: 600px;
+    background-color: #ff359d;
+}
+section .color:nth-child(2) {
+    bottom: -150px;
+    left: 100px;
+    width: 500px;
+    height: 500px;
+    background-color: #ffd87f;
+   
+}
+section .color:nth-child(3) {
+    bottom: 50px;
+    right: 100px;
+    width: 500px;
+    height: 500px;
+    background-color: #00d2ff;
+    
+}
+.box {
+    position: relative;
+}
+.box .circlre {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    filter: hue-rotate(calc(var(--x) * 80deg));
+    animation: animate 10s linear infinite;
+    animation-delay: calc(var(--x) * -1s);
+}
+@keyframes animate {
+    0%,100% {
+        transform: translateY(-55px);
+    }
+    50% {
+            transform: translateY(55px);
+    }
+}
+.box .circlre:nth-child(1) {
+    top: -50px;
+    right: -60px;
+    width: 100px;
+    height: 100px;
+}
+.box .circlre:nth-child(2) {
+    top: 150px;
+    left: -100px;
+    width: 120px;
+    height: 120px;
+    z-index: 2;
+}
+.box .circlre:nth-child(3) {
+    bottom: 50px;
+    right: -60px;
+    width: 80px;
+    height: 80px;
+    z-index: 2;
+}
+.box .circlre:nth-child(4) {
+    bottom: -80px;
+    left: 100px;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+}
+.box .circlre:nth-child(5) {
+    top: -80px;
+    left: 140px;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+}
+/* 登录框样式 */
+.container {
+    position: relative;
+    width: 400px;
+    min-height: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur( 7px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.form {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+    }
+/* 登录标题样式 */
+.form h2 {
+    position: relative;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+    cursor: pointer;
+} 
+/* 登录标题下划线样式 */
+.form h2::before{
+    content: "";
+    position: absolute;
+    width: 0px;
+    bottom: -5px;
+    height: 3px;
+    background: #fff;
+    transition: 0.5s;
+}
+.form h2:hover:before {
+    width: 53px;
+}
+.form .inputBox {
+    width: 100%;
+    margin-top: 20px;
+}
+.form .inputBox input {
+    width: 100%;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 16px;
+    color: #fff;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+.form .inputBox input::placeholder {
+    color: #fff;
+}
+/* 登录按钮样式 */
+.form .inputBox input[type="submit"] {
+    background: #fff;
+    color: #666;
+    margin-left: 85px;
+    max-width: 120px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.forget {
+    margin-top: 5px;
+    margin-left: 66px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+.forget a {
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+}
