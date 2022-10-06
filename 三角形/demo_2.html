@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<!-- <meta http-equiv="refresh" content="3.5"> -->
+    <title>Chap2 Demo</title>
+    <script id="vertex-shader" type="x-shader/x-vertex">
+	attribute vec3 vPosition;
+	attribute vec3 vColor;
+	varying vec4 color;
+
+	void main(){
+		gl_Position = vec4( vPosition, 1.0 );
+		color = vec4( vColor, 1.0 );
+	}
+	</script>
+
+    <script id="fragment-shader" type="x-shader/x-fragment">
+	precision mediump float;
+	varying vec4 color;
+	void main(){
+		gl_FragColor = color;
+	}
+	</script>
+
+    <script type="text/javascript" src="./lib/webgl-utils.js"></script>
+    <script type="text/javascript" src="./lib/initShaders.js"></script>
+    <script type="text/javascript" src="./lib/gl-matrix-min.js"></script>
+
+    <script type="text/javascript" src="../ch03/gasket-triangles_2.js"></script>
+</head>
+
+<body>
+    <h1>Sierpinski Gasket in 3D(三维效果模式)</h1>
+	<h2>如果要重新选择，请刷新后再选择!</h2>
+	<div>
+		<p>0层为一个三棱锥体</p>
+        <td>请选择你要查看的层数：</td>
+		<input type="button" onclick="fn(this)"  name="提交" id="0" value="0">
+        <input type="button" onclick="fn(this)"  name="提交" id="1" value="1">
+        <input type="button" onclick="fn(this)" name="提交" id="2" value="2">
+        <input type="button" onclick="fn(this)" name="提交" id="3" value="3">
+        <input type="button" onclick="fn(this)" name="提交" id="4" value="4">
+        <input type="button" onclick="fn(this)" name="提交" id="5" value="5">
+        <input type="button" onclick="fn(this)" name="提交" id="6" value="6">
+        <input type="button" onclick="fn(this)" name="提交" id="7" value="7">
+	</div>
+	<canvas id="gl-canvas" width="512" height="512">你的浏览器不支持HTML5 canvas元素</canvas>
+</body>
+
+</html>

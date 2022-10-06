@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>Chap2 Demo Tessellation </title>
+    <script id="vertex-shader" type="x-shader/x-vertex">
+	attribute vec4 vPosition;
+	void main(){
+		gl_Position = vPosition;
+	}
+	</script>
+
+    <script id="fragment-shader" type="x-shader/x-fragment">
+	precision mediump float;
+	void main(){
+		gl_FragColor = vec4( 1.0, 0.0, 0.0, 1.0 );
+	}
+	</script>
+
+    <script type="text/javascript" src="./lib/webgl-utils.js"></script>
+    <script type="text/javascript" src="./lib/initShaders.js"></script>
+    <script type="text/javascript" src="./lib/gl-matrix-min.js"></script>
+
+    <script type="text/javascript" src="../ch03/gasket-triangles4.js"></script>
+</head>
+
+<body>
+    <h1>Sierpinski Gasket (中心点旋转模式)</h1>
+    <h2>如果要重新选择，请刷新后再选择!</h2>
+    <div>
+        <p>再原有基础（0度）上旋转</p>
+        <td>请选择你要旋转的角度：</td>
+		<input type="button" onclick="fn(this)"  name="提交" id="0" value="0">
+        <input type="button" onclick="fn(this)"  name="提交" id="1" value="40">
+        <input type="button" onclick="fn(this)" name="提交" id="2" value="80">
+        <input type="button" onclick="fn(this)" name="提交" id="3" value="111">
+        <input type="button" onclick="fn(this)" name="提交" id="4" value="169">
+        <input type="button" onclick="fn(this)" name="提交" id="5" value="222">
+        <input type="button" onclick="fn(this)" name="提交" id="6" value="245">
+        <input type="button" onclick="fn(this)" name="提交" id="7" value="277">
+	</div>
+    <canvas id="gl-canvas" width="600" height="600">你的浏览器不支持HTML5 canvas元素</canvas>
+</body>
+
+</html>
