@@ -18,17 +18,19 @@
 	}
 	</script>
 
-    <script type="text/javascript" src="../js/webgl-utils.js"></script>
-    <script type="text/javascript" src="../js/initShaders.js"></script>
-    <script type="text/javascript" src="../js/gl-matrix-min.js"></script>
-    <script type="text/javascript" src="gasket-triangles1.js"></script>
+   <script type="text/javascript" src="./lib/webgl-utils.js"></script>
+    <script type="text/javascript" src="./lib/initShaders.js"></script>
+    <script type="text/javascript" src="./lib/gl-matrix-min.js"></script>
+    <script type="text/javascript" src="../ch03/gasket-triangles1.js"></script>
     
 </head>
 
 <body>
-    <h1>Sierpinski Gasket in 3D(三维效果模式)</h1>
+   <h1>Sierpinski Gasket in 3D(三角形模式)</h1>
 	<h2>如果要重新选择，请刷新后再选择!</h2>
         <div>
+            <p>0层为一个三角形</p>
+            <td>请选择你要查看的层数：</td>
             <input type="button" onclick="fn(this)"  name="提交" id="0" value="0">
             <input type="button" onclick="fn(this)"  name="提交" id="1" value="1">
             <input type="button" onclick="fn(this)" name="提交" id="2" value="2">
