@@ -17,7 +17,8 @@ var radius=1.0;
 function fn(e){
 	theta=e.value;
 	console.log(theta);
- initTriangles();   
+        initTriangles(); 
+	points = [];
 
 	function initTriangles(){
 	canvas = document.getElementById( "gl-canvas" );
