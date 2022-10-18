@@ -13,6 +13,7 @@ function Result(){
 	var x=document.getElementById("numTimesToSubdivide").value;
 	console.log(x);
 	initTriangles();
+	points = [];
 
 	function initTriangles(){
 	canvas = document.getElementById( "gl-canvas" );
