@@ -13,7 +13,7 @@ function fn(e){
 	numTimesToSubdivide=e.value;
 	console.log(numTimesToSubdivide);
 	init();
-
+        points = [];
 function init() {
     canvas = document.getElementById("gl-canvas");
 
