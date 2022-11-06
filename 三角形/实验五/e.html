@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>DrawCircle</title>
+
+        <script id="vertex-shader" type="x-shader/x-vertex">
+            attribute vec4 vPosition;
+            uniform vec4 u_transMat;
+            void main(){
+              gl_Position =vPosition + u_transMat;
+            }
+        </script>
+        <script id="fragment-shader" type="x-shader/x-fragment">
+            precision mediump float;
+            void main(){
+                gl_FragColor = vec4( 1.0, 0.0, 0.0, 1.0 );
+            }
+        </script>
+        <script type="text/javascript" src="../lib/webgl-utils.js"></script>
+        <script type="text/javascript" src="../lib/initShaders.js"></script>
+    </head>
+    <body>
+        <canvas id="gl-canvas" width="512" height="512">
+        </canvas>
+        <fieldset>
+            <legend>速度控制</legend>
+            <button id="direction" onclick="changeDir_1()">横向换个移动方向</button><br>
+            Speed 0<input type="range" id="speedcon" min="0" max="1000" value="50" step="10"> 1000
+        </fieldset>
+    </body>
+    <script type="text/javascript" src="./rotcube_e.js"></script>
+
+</html>
